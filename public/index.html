@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Flood Monitoring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style-weather.css">
+    <link rel="stylesheet" href="./css/style-main.css">
+    <link rel="stylesheet" href="./css/style-chart.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="./js/firebase.js"></script>
+  </head>
+</head>
+
+<body>
+  <h1>Dagupan Flood Real-Time Monitoring</h1>
+
+  <table class="fujita-table">
+    <caption>Flood Update</caption>
+    <colgroup></colgroup>
+    <colgroup></colgroup>
+    <thead>
+      <tr>
+        <th scope="col" rowspan="2">Rating</th>
+        <th scope="col" rowspan="2">Water Height Estimate (FEET)</th>
+        <th scope="col" rowspan="2">Location</th>
+      </tr>
+    </thead>
+    <tbody class="floodupdate">
+      <tr>
+        <td data-th="Rating" class="rate"></td>
+        <td data-th="height" class="height">1</td>
+        <td data-th="Location" class="location">1</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="container">
+    <div class="weather-input">
+      <h3>Enter a City Name</h3>
+      <input class="city-input" type="text" placeholder="E.g., Manila, Quezon, Dagupan">
+      <button class="search-btn">Search</button>
+      <div class="separator"></div>
+      <button class="location-btn">Use Current Location</button>
+    </div>
+    <div class="weather-data">
+      <div class="current-weather">
+        <div class="details">
+          <h2>_______ ( ______ )</h2>
+          <h6>Temperature: __°C</h6>
+          <h6>Wind: __ M/S</h6>
+          <h6>Humidity: __%</h6>
+        </div>
+      </div>
+      <div class="days-forecast">
+        <h2>5-Day Forecast</h2>
+        <ul class="weather-cards">
+          <li class="card">
+            <h3>( ______ )</h3>
+            <h6>Temp: __C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </li>
+          <li class="card">
+            <h3>( ______ )</h3>
+            <h6>Temp: __C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </li>
+          <li class="card">
+            <h3>( ______ )</h3>
+            <h6>Temp: __C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </li>
+          <li class="card">
+            <h3>( ______ )</h3>
+            <h6>Temp: __C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </li>
+          <li class="card">
+            <h3>( ______ )</h3>
+            <h6>Temp: __C</h6>
+            <h6>Wind: __ M/S</h6>
+            <h6>Humidity: __%</h6>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="tideContainer"></div>
+
+  <div>
+    <h1 class="dam-table-title">Dam Information</h1>
+    <div id="tableContainer">
+      <!-- The scraped table will be inserted here -->
+    </div>
+  </div>
+
+
+  <script src="./js/floodupdate.js"></script>
+  <script src="./js/Tide.js"></script>
+  <script src="./js/DamInformation.js"></script>
+  <script src="./js/WeatherApi.js"></script>
+</body>
+
+</html>
