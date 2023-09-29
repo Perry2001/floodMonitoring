@@ -32,7 +32,7 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
 
     // Update the location and height cells
     locationCell.textContent = location;
-    heightCell.textContent = height;
+    heightCell.textContent = height + ' ft';
   } catch (error) {
     // Handle the error gracefully
     console.error('An error occurred:', error.message);

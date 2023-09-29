@@ -1,106 +1,145 @@
-@-webkit-viewport {
-    width: extend-to-zoom 100%;
-    zoom: 1;
-    orientation: auto;
-    initial-scale: auto;
-}
-
-@-moz-viewport {
-    width: extend-to-zoom 100%;
-    zoom: 1;
-    orientation: auto;
-    initial-scale: auto;
-}
-
-@-ms-viewport {
-    width: extend-to-zoom 100%;
-    zoom: 1;
-    orientation: auto;
-    initial-scale: auto;
-}
-
-@-o-viewport {
-    width: extend-to-zoom 100%;
-    zoom: 1;
-    orientation: auto;
-    initial-scale: auto;
-}
-
-@viewport {
-    width: extend-to-zoom 100%;
-    zoom: 1;
-    orientation: auto;
-    initial-scale: auto;
-}
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
-
-* :before,
-* :after,
-.no-select {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: -moz-none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-tap-highlight-color: transparent;
-}
+/* Global Styles */
 
 html,
 body {
     height: 100%;
     width: 100%;
-}
-
-html {
-    overflow-y: scroll;
+    font-family: "Roboto", sans-serif;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     box-sizing: border-box;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
 }
 
-body,
-body *,
-body *:before,
-body *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-size: 100%;
     font-size: 16px;
-    font-style: normal;
-    font-kerning: normal;
     font-weight: 400;
     line-height: 1.618;
     text-align: left;
     position: relative;
-    font-family: "Roboto", sans-serif;
+    overflow-y: scroll;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+}
+
+/* Shared Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 100px;
+    /* Adjust the size as needed */
+}
+
+/* Style the logo */
+.title {
+    color: #fff;
+    font-size: 32px;
+    /* Adjust the font size as needed */
+    margin-left: 10px;
+    /* Add spacing between the logo and title */
+}
+
+/* Style the navigation links */
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.container-border {
+    margin: 13px;
+}
+
+.modalButton {
+    background-color: #242D56;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/* Specific Styles */
+
+.wrapper {
+    background-color: #242D56;
+}
+
+.flooUpdate-container,
+.weatherApp-container,
+#tideContainer,
+.dam-container {
+    display: grid;
+    place-items: center;
+    background-color: #2a83b360;
+    margin: 20px 100px;
+    border-radius: 16px;
+    color: #C7C1BE;
 }
 
 .fujita-table {
     background-color: #fff;
     position: relative;
+    font-size: large;
+    font-weight: bold;
+    color: #000;
     max-width: 980px;
-    margin: 1rem auto;
+    /* Change the max-width to your desired value */
+    margin: 0 auto;
+    /* Center the table within its container */
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
+    color: #000;
+    width: 100%;
+    /* Set the table to 100% width */
+    /* Add padding to create space in between */
+
+
 }
 
 .fujita-table thead th,
@@ -110,24 +149,20 @@ body {
 
 .fujita-table th,
 .fujita-table td {
-    padding: .25rem .5rem;
+    padding: 5.25rem .5rem;
 }
 
 .fujita-table tbody {
     border: 0;
-    -webkit-transition: all .333s ease;
     transition: all .333s ease;
 }
 
 .fujita-table tbody td {
-    border: 1px solid #e5e5e5;
-    -webkit-transition: all .333s ease;
     transition: all .333s ease;
 }
 
 .fujita-table a {
     color: #38487a;
-    -webkit-transition: all .333s ease;
     transition: all .333s ease;
 }
 
@@ -135,182 +170,125 @@ body {
     color: #be0000;
 }
 
-.fujita-table a[target=_blank]:after {
-    content: "\f03e";
-    font-family: FontAwesome;
-    padding: 0 3px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.fujita-table caption {
-    /*font-size:16px; font-weight:700;*/
-    margin: .5rem 0 16px;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.fujita-table p.fine-print {
-    padding: .5rem 16px;
-    color: #666;
-    font-size: 11.023px;
-    /*line-height:1.333;*/
-}
-
-.fujita-table thead tr th[scope=col] {
-    border-style: solid;
-    border-color: #e5e5e5;
-    border-width: 1px 1px 0 1px;
-    /*padding:.5rem 16px;*/
-    font-size: 13.625px;
-    color: #333;
-}
-
-.fujita-table thead th sup {
-    line-height: 0;
-}
-
-.fujita-table thead th sup a {
-    display: inline-block;
-    font-size: 1.286em;
-    font-weight: 700;
-    left: 3px;
-    position: relative;
-    top: 3px;
-}
-
-.fujita-table tbody tr td[class*=scale] {
-    border: 0;
-    height: 100px;
-}
-
-.fujita-table tbody tr td:last-child {
-    line-height: 1.3;
-    padding: 4px 16px;
-    text-align: left;
-    width: 50%;
-}
-
-.fujita-table tbody tr:nth-child(odd) {
-    background: #f5f5f5;
-}
-
-.fujita-table .scale_0 {
-    background-color: rgb(5, 207, 5);
-}
-
-.fujita-table .scale_1 {
-    background-color: yellow;
-}
-
-.fujita-table .scale_2 {
-    background-color: red;
-}
-
-
-.fujita-table th {
-    display: none;
-}
-
-.fujita-table td {
-    display: block;
-}
-
-.fujita-table tbody td:before {
-    content: attr(data-th) ": ";
-    font-weight: bold;
-    display: inline-block;
-}
-
-.dam-table-title {
-    align-content: start;
-}
-
 #tableContainer,
-.dam-table-title,
-#tideContainer {
+#tideContainer,
+.dam-container {
     overflow-x: auto;
     overflow-y: auto;
     margin: auto;
-    width: 80%;
-    height: 80%;
+}
+
+.weatherApp-container,
+#tideContainer {
+    margin-bottom: 13px;
+}
+
+.dam-container table,
+.dam-table,
+.tidechart {
+    background-color: #4b60bd6e;
+    font-weight: 300;
+    color: rgb(255, 248, 248);
 
 }
 
-table {
-    border-collapse: collapse;
+table caption,
+.caption {
+    background-color: #242D56;
+    color: #fff;
+    font-size: 6.5rem;
     width: 100%;
 }
 
-
-table.dam-table {
-
-    color: #22313f !important;
+tr:nth-child(even) {
+    background-color: #3fb2f060;
 }
 
-.dam-title {
-    color: #22313f;
-
+tr:nth-child(even) {
+    background-color: #2a6b8d60;
 }
 
-.dam-title:hover {
-    color: #22313f;
-    text-decoration: none;
+.tidechart tr:hover {
+    background-color: #ddd;
+    color: #000;
 }
 
-.dam-tooltip {
-    font-size: 14px;
-    font-style: italic;
-    font-weight: normal;
-}
 
-.dam-table td {
-    padding: 8px;
-    /* Add padding to cells for better spacing */
-    text-align: center;
-    vertical-align: middle !important;
-    border: 2px solid rgb(184, 177, 177);
-    /* Set the border color to black */
-}
+/* Media Queries */
 
-thead {
-    font-weight: bold;
-    border: 2px solid rgb(165, 159, 159);
-    /* Set the border color to black */
-    background-color: #42aeec;
-    /* Add background color to the header */
-}
+@media (max-width: 799px) {
+    .title {
+        display: none;
+        /* Hide the title on small screens */
+    }
 
-th {
-    vertical-align: middle !important;
-    text-align: center;
-    border: 2px solid rgb(219, 214, 214);
-    /* Set the border color to black */
-    background-color: skyblue;
-    /* Add background color to the header */
-    text-align: left;
-    padding: 8px;
-}
+    .modal-button {
+        padding: 5px 10px;
+        /* Make buttons smaller on small screens */
+    }
 
-.current-data {
-    background-color: #ccffcc;
-    font-weight: bold;
-}
 
-/* Add responsive styles */
-@media (max-width: 600px) {
-    table.dam-table {
+
+    .dam-container,
+    #tideContainer {
+        margin: auto;
+    }
+
+    table caption,
+    .caption {
+        background-color: #242D56;
+        color: #fff;
+        font-size: 2.5rem;
         width: 100%;
     }
-}
 
-@media (max-width:799px) {
+
     .fujita-table {
         font-size: 13.625px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+
+        /* Remove padding for smaller screens */
+    }
+
+    .fujita-table tbody tr {
+        display: block;
+        /* Change the display property */
+        margin-bottom: 16px;
+        width: 100%;
+        /* Set the width to 100% */
+    }
+
+    .fujita-table tbody tr td {
+        border: none;
+        display: block;
+        /* Change the display property */
+        width: 100%;
+        height: 10rem;
+        /* Set the width to 100% */
+        padding: .5rem;
+        font-size: 3rem;
+    }
+
+    .modalButton {
+        justify-content: end;
     }
 }
 
-@media (min-width:481px) {
+@media (max-width: 600px) {
+
+    .fujita-table caption {
+        display: none;
+    }
+
+    .flooUpdate-container {
+        padding: 0;
+    }
+}
+
+@media (min-width: 481px) {
     .fujita-table tbody td:before {
         display: none;
     }
@@ -343,7 +321,7 @@ th {
     }
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
     .fujita-table tbody tr td[class*=scale_] {
         height: auto;
     }
