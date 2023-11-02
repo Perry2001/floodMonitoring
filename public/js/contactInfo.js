@@ -7,12 +7,9 @@ submitButton.addEventListener('click', function (e) {
     const name = contactForm.querySelector('[name="name"]').value;
     const phoneNumber = contactForm.querySelector('[name="phoneNumber"]').value;
 
-    // Generate a unique UID for the contact (user)
-    const uid = firebase.database().ref().child('contacts').push().key;
-
-    // Save the name and phone number under separate child nodes with the same UID
-    firebase.database().ref('contacts/name/' + uid).set(name);
-    firebase.database().ref('contacts/number/' + uid).set(phoneNumber)
+    // Save the name as the key and the phone number as the value
+    const contactsRef = firebase.database().ref('contacts/number');
+    contactsRef.child(name).set(phoneNumber)
         .then(() => {
             // Data saved successfully
             alert('Contact saved successfully.');
@@ -24,28 +21,3 @@ submitButton.addEventListener('click', function (e) {
             alert('An error occurred while saving the contact.');
         });
 });
-
-
-
-/*/ Function to retrieve all phone numbers
-function getAllPhoneNumbers() {
-    const phoneNumberRef = firebase.database().ref('contacts/number');
-
-    phoneNumberRef.once('value')
-        .then(snapshot => {
-            const phoneNumbers = [];
-            snapshot.forEach(childSnapshot => {
-                const phoneNumber = childSnapshot.val();
-                phoneNumbers.push(phoneNumber);
-            });
-
-            // Now, phoneNumbers array contains all phone numbers
-            console.log(phoneNumbers);
-        })
-        .catch(error => {
-            console.error('Error retrieving phone numbers:', error);
-        });
-}
-
-// Call the function to retrieve all phone numbers
-getAllPhoneNumbers();*/

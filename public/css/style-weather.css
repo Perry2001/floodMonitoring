@@ -52,6 +52,7 @@ select {
 .weather-input input:focus {
   padding: 0 16px;
   border: 2px solid #5372F0;
+  
 }
 
 .weather-input .separator {

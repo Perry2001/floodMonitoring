@@ -18,9 +18,9 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     let rateColor = '';
     if (height === 0) {
       rateColor = 'green';
-    } else if (height >= 1 && height <= 3) {
+    } else if (height < 0 || height <= 2) {
       rateColor = 'yellow';
-    } else if (height > 3) {
+    } else if (height >= 3) {
       rateColor = 'red';
     }
 
