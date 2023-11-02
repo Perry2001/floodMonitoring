@@ -177,7 +177,6 @@ body {
 }
 
 .tidedamContainer {
-    border: 1px solid #000;
     padding: 5rem;
 }
 
@@ -197,6 +196,13 @@ table caption,
     color: #07141C;
     font-size: 3.5rem;
     width: 100%;
+    text-align: center;
+}
+.dam-title{
+    color: #07141C;
+    font-size: 3.5rem;
+    width: 100%;
+    text-align: center;
 }
 
 tr:nth-child(even) {
@@ -307,7 +313,6 @@ tr:nth-child(odd) {
     }
 
     .tidedamContainer {
-        border: 1px solid #000;
         padding: 5rem;
     }
 }
@@ -365,7 +370,6 @@ tr:nth-child(odd) {
     }
 
     .tidedamContainer {
-        border: 1px solid #000;
         padding: 0;
     }
 }

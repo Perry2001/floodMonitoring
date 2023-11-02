@@ -30,6 +30,8 @@ h1 {
   padding: 30px;
   max-width: 980px;
   margin: 0 auto;
+  margin-top: 20px;
+  flex-direction: column;
 }
 
 .weather-input,
