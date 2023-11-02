@@ -209,9 +209,7 @@ tr:nth-child(even) {
     background-color: #3fb2f060;
 }
 
-tr:nth-child(odd) {
-    background-color: #2a6b8d60;
-}
+
 
 /* Media Queries */
 @media (max-width: 799px) {
