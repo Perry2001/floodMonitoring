@@ -30,9 +30,15 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     // Update the rate cell's content
     rateCell.textContent = data.rate;
 
+   
+
     // Update the location and height cells
-    locationCell.textContent = location;
-    heightCell.textContent = height + ' ft';
+    locationCell.textContent = location.toUpperCase();
+    heightCell.textContent = height + 'ft';
+
+    if (height >= 3) {
+      heightCell.textContent = height + 'ft or higher evacuate immediately'.toUpperCase();
+    }
   } catch (error) {
     // Handle the error gracefully
     console.error('An error occurred:', error.message);
