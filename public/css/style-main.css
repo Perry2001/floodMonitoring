@@ -201,9 +201,7 @@ td {
     text-align: center !important;
 }
 
-.table thead th img {
-    /*display: none;*/
-}
+
 
 table caption,
 .caption,
@@ -224,6 +222,11 @@ table caption,
 
 tr:nth-child(even) {
     background-color: #3fb2f060;
+}
+
+.dam-table thead tr th,
+.table thead tr th {
+    background-color: #7A9AD0;
 }
 
 
