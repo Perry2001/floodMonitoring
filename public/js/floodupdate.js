@@ -45,3 +45,4 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     // You can add additional error handling logic here if needed
   }
 });
+

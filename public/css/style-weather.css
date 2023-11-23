@@ -32,6 +32,8 @@ h1 {
   margin: 0 auto;
   margin-top: 20px;
   flex-direction: column;
+  background-color: #4b60bd6e;
+
 }
 
 .weather-input,
@@ -107,7 +109,7 @@ select {
 
 .weather-data .current-weather {
   color: #fff;
-  background: #5372F0;
+  background:  #4b60bd6e;
   border-radius: 5px;
   padding: 20px 70px 20px 20px;
   display: flex;
