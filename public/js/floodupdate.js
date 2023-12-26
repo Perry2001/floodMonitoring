@@ -18,8 +18,10 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     let rateColor = '';
     if (height === 0) {
       rateColor = 'green';
-    } else if (height === 1 || height === 2) {
+    } else if (height === 1) {
       rateColor = 'yellow';
+    } else if (height === 2) {
+      rateColor = 'orange';
     } else if (height >= 3) {
       rateColor = 'red';
     }
@@ -30,7 +32,7 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     // Update the rate cell's content
     rateCell.textContent = data.rate;
 
-   
+
 
     // Update the location and height cells
     locationCell.textContent = location.toUpperCase();
