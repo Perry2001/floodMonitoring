@@ -18,7 +18,7 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
     let rateColor = '';
     if (height === 0) {
       rateColor = 'green';
-    } else if (height < 0 || height <= 2) {
+    } else if (height === 1 || height === 2) {
       rateColor = 'yellow';
     } else if (height >= 3) {
       rateColor = 'red';
@@ -34,10 +34,10 @@ database.ref('/FloodUpdate').on('value', (snapshot) => {
 
     // Update the location and height cells
     locationCell.textContent = location.toUpperCase();
-    heightCell.textContent = height + 'ft';
+    heightCell.textContent = height + ' ft';
 
     if (height >= 3) {
-      heightCell.textContent = height + 'ft or higher evacuate immediately'.toUpperCase();
+      heightCell.textContent = height + ' ft or higher evacuate immediately'.toUpperCase();
     }
   } catch (error) {
     // Handle the error gracefully
